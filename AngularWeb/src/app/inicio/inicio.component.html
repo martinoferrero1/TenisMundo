@@ -1,0 +1,21 @@
+
+<div class="inicio" [ngStyle]="{ 'background-image': 'url(' + backgroundImages[currentImageIndex] + ')'}">
+    <div class="titulo-principal">
+        <span class="primera-parte-titulo"> ¡Bienvenid </span>
+        <span>
+            <img class="pelota" src="https://static.vecteezy.com/system/resources/thumbnails/013/362/731/small/tennis-ball-transparent-free-png.png" alt="Pelota de Tenis">
+        </span>
+        <span class="segunda-parte-titulo"> a TenisMundo! </span>
+    </div>
+    <app-opciones-navegacion> </app-opciones-navegacion>
+    <p class="seleccionar-jugador"> Estos son algunos grandes jugadores de los últimos años, ¡ selecciona uno para saber más sobre él ! </p>
+    <div class="jugadores" *ngIf="jugadores">
+        <div class="jugador" (click)="verDetallesJugador(player._id)" *ngFor="let player of jugadores">
+            <p class="nombre-jugador">{{ player.nombre }}</p>
+            <img class="bandera-pais" src="{{ player.bandera_pais }}" alt="Bandera de {{ player.pais }}">
+        </div>
+    </div>
+</div>
+
+<router-outlet> </router-outlet>
+<router-outlet name="detalleJugador"></router-outlet>

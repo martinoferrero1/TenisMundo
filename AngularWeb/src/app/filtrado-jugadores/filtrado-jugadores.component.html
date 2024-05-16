@@ -1,0 +1,24 @@
+
+<div class="filtrado-jugadores">
+    <form #miFormulario id="miFormulario" class="filtro" [ngClass]="{'inhabilitado': jugadores_marcados > 0}">
+        <div class="seccion-1-filtro">
+            <label for="filtro_nombre"> Nombre </label>
+            <input class="input-basico" type="text" name="nombre" id="nombre" [disabled]="jugadores_marcados > 0" #campoNombre>
+            <label for="filtro_apellido"> Apellido </label>
+            <input class="input-basico" type="text" name="apellido" id="apellido" [disabled]="jugadores_marcados > 0" #campoApellido>
+            <label for="filtro_pais"> Pais </label>
+            <input class="input-basico" type="text" name="pais" id="pais" [disabled]="jugadores_marcados > 0" #campoPais>
+        </div>
+        <div class="seccion-2-filtro">
+            <label for="filtro_estado"> Estado </label>
+            <select class="barra" id="opciones_estado" name="opciones_estado" (change)="seleccionOpcion($event)" [disabled]="jugadores_marcados > 0"> 
+                <option [value]="'Cualquiera'"> Cualquiera </option>
+                <option [value]="'Retirado'"> Retirado </option>
+                <option [value]="'En actividad'"> En actividad </option>
+            </select>
+            <button class="boton-aplicar-filtro" type="button" (click)="aplicarFiltro()" [disabled]="jugadores_marcados > 0"> Buscar </button>
+        </div>
+    </form>
+</div>
+
+<router-outlet> </router-outlet>

@@ -1,0 +1,165 @@
+
+.contorno-general {
+    border: 5px solid hsla(0, 10%, 4%, 0.795);
+}
+
+.editar-eliminar-jugadores {
+    background-color: rgba(158, 165, 170, 0.26);
+}
+
+.jugadores {
+    margin-top: 50px;
+}
+
+.resultados-filtrado {
+    text-align: center;
+}
+
+.jugadores-marcados {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.seleccionar-completamente {
+    display: flex;
+}
+
+.descripcion-seleccionar-todos {
+    font-size: 1.3vw;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.opciones-jugadores-marcados {
+    display: flex;
+    gap: 100px;
+}
+
+.eliminar {
+    display: flex;
+    gap: 5px;
+}
+
+.cancelar {
+    display: flex;
+    gap: 8px;
+}
+
+.opcion-general {
+    font-size: 1.4vw;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.opcion-general:hover {
+    color:#041953e3;
+    cursor: pointer;
+}
+
+.listado {
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    border: 5px solid rgba(74, 188, 150);
+    border-style: groove;
+    margin: 50px 0;
+    padding: 10px 30px;
+}
+
+.jugador {
+    display: flex;
+    text-align: justify;
+    justify-content: space-between;
+    width: 65vw;
+    font-family: sans-serif;
+    margin: 10px 0;
+    border: 2px solid #cccccc81;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(128, 128, 128, 0.183);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.jugador:hover {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+.marcado {
+    display: flex;
+}
+
+.cuadrado-marcar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.1vw;
+    height: 1.1vw;
+    border: 3px solid rgba(74, 188, 150);
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.tilde-marcado {
+    width: 0.75vw;
+    height: auto;
+}
+  
+.nombre-jugador {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.icono {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+}
+
+.opcion-especifica {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.opcion-especifica:hover {
+    color:#041953e3;
+    cursor: pointer;
+}
+
+.botones-pasar-pagina {
+    margin-bottom: 100px;
+}
+
+.boton-pasar-pagina {
+    background-color: rgb(255, 255, 255);
+    margin: 0 80px;
+    font-size: 1.5vw;
+    font-weight: 700;
+    font-style: oblique;
+    font-family: sans-serif;
+    border-radius: 8px;
+    border-color: rgba(74, 188, 150);;
+    box-shadow: 1px 1px 3px rgba(74, 188, 150);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.ninguna-coincidencia {
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-style: italic;
+    font-weight: 600;
+}
+
+

@@ -1,0 +1,95 @@
+
+<form #miFormulario id="miFormulario" class="formulario-jugador">
+    <div class="seccion-1-formulario">
+        <label for="nombre" [ngClass]="{'no-completado': miFormulario['nombre'].value.trim() === '' && envio_erroneo}"> Nombre y apellido </label>
+        <input class="input-basico" type="text" id="nombre" name="nombre" #campoNombre required>
+        <label for="fecha_nacimiento" [ngClass]="{'no-completado': (!miFormulario['dia_fecha_nacimiento'].checkValidity() || !miFormulario['mes_fecha_nacimiento'].checkValidity() || !miFormulario['anio_fecha_nacimiento'].checkValidity()) && envio_erroneo}"> Fecha de nacimiento </label>
+        <input class="input-basico" type="number" id="dia_fecha_nacimiento" name="dia_fecha_nacimiento" min="1" max="31" placeholder="Día" #campoDiaNacimiento required>
+        <input class="input-basico" type="number" id="mes_fecha_nacimiento" name="mes_fecha_nacimiento" min="1" max="12" placeholder="Mes" #campoMesNacimiento required>
+        <input class="input-basico" type="number" id="anio_fecha_nacimiento" name="anio_fecha_nacimiento" min="1950" max="2023" placeholder="Año" #campoAnioNacimiento required>
+    </div>
+    <div class="seccion-2-formulario">
+        <label for="nacionalidad" [ngClass]="{'no-completado': (miFormulario['pais'].value.trim() === '' || miFormulario['bandera_pais'].value.trim() === '') && envio_erroneo}"> Nacionalidad </label>
+        <input class="input-basico" type="text" id="pais" name="pais" placeholder="País" #campoPais required>
+        <input class="input-basico" type="text" id="bandera_pais" name="bandera_pais" placeholder="Link a la bandera" #campoBanderaPais required>
+    </div>
+    <div class="seccion-3-formulario">
+        <label for="titulos_individuales" [ngClass]="{'no-completado': !miFormulario['titulos_individuales'].checkValidity() && envio_erroneo}"> Cantidad de títulos individuales </label>
+        <input class="input-basico" type="number" id="titulos_individuales" name="titulos_individuales" min="0" #campoCantidadTitulos required>
+        <label for="mejor_ranking_individual" [ngClass]="{'no-completado': !miFormulario['mejor_ranking_individual'].checkValidity() && envio_erroneo}"> Mejor ránking individual </label>
+        <input class="input-basico" type="number" id="mejor_ranking_individual" name="mejor_ranking_individual" min="1" max="2000" #campoMejorRankingIndividual required>
+    </div>
+    <div class="seccion-4-formulario">
+        <p class="descripcion-titulos-gs"> Títulos de Grand Slam </p>
+        <div class="grand-slam">
+            <label for="titulos_ao" (click)="modificarVisibilidadBarra('Australian Open')"> Australian Open <span *ngIf="mostrar_barra_ao; else iconoMostrarAnios"> <ng-container *ngTemplateOutlet="iconoNoMostrarAnios"> </ng-container> </span> </label>
+            <select class="barra" [ngClass]="{'oculto': !mostrar_barra_ao}" id="anios_ao" name="anios_ao" multiple> 
+                <option class="anio-opcion" *ngFor="let anio of anios_opciones_gs" [value]="anio" (click)="seleccionAnio($event, 'Australian Open')">{{ anio }}</option>
+            </select>
+            <span class="anios-elegidos" *ngIf="anios_ao.length > 0">
+                <span *ngFor="let anio of anios_ao; let i=index"> <span *ngIf="i > 0"> - </span>{{ anio }}</span>
+            </span>
+        </div>
+        <div class="grand-slam">
+            <label for="titulos_rg" (click)="modificarVisibilidadBarra('Roland Garros')"> Roland Garros <span *ngIf="mostrar_barra_rg; else iconoMostrarAnios"> <ng-container *ngTemplateOutlet="iconoNoMostrarAnios"> </ng-container> </span> </label>
+            <select class="barra" [ngClass]="{'oculto': !mostrar_barra_rg}" id="anios_rg" name="anios_rg" multiple>
+                <option class="anio-opcion" *ngFor="let anio of anios_opciones_gs" [value]="anio" (click)="seleccionAnio($event, 'Roland Garros')">{{ anio }}</option>
+            </select>
+            <span class="anios-elegidos" *ngIf="anios_rg.length > 0">
+                <span *ngFor="let anio of anios_rg; let i=index"> <span *ngIf="i > 0"> - </span>{{ anio }}</span>
+            </span>
+        </div>
+        <div class="grand-slam">
+            <label for="titulos_wi" (click)="modificarVisibilidadBarra('Wimbledon')"> Wimbledon <span *ngIf="mostrar_barra_wi; else iconoMostrarAnios"> <ng-container *ngTemplateOutlet="iconoNoMostrarAnios"> </ng-container> </span> </label>
+            <select class="barra" [ngClass]="{'oculto': !mostrar_barra_wi}" id="anios_wi" name="anios_wi" multiple>
+                <option class="anio-opcion" *ngFor="let anio of anios_opciones_gs" [value]="anio" (click)="seleccionAnio($event, 'Wimbledon')">{{ anio }}</option>
+            </select>
+            <span class="anios-elegidos" *ngIf="anios_wi.length > 0">
+                <span *ngFor="let anio of anios_wi; let i=index"> <span *ngIf="i > 0"> - </span>{{ anio }}</span>
+            </span>
+        </div>
+        <div class="grand-slam">
+            <label for="titulos_uo" (click)="modificarVisibilidadBarra('Us Open')"> Us Open <span *ngIf="mostrar_barra_uo; else iconoMostrarAnios"> <ng-container *ngTemplateOutlet="iconoNoMostrarAnios"> </ng-container> </span> </label>
+            <select class="barra" [ngClass]="{'oculto': !mostrar_barra_uo}" id="anios_uo" name="anios_uo" multiple>
+                <option class="anio-opcion" *ngFor="let anio of anios_opciones_gs" [value]="anio" (click)="seleccionAnio($event, 'Us Open')">{{ anio }}</option>
+            </select>
+            <span class="anios-elegidos" *ngIf="anios_uo.length > 0">
+                <span *ngFor="let anio of anios_uo; let i=index"> <span *ngIf="i > 0"> - </span>{{ anio }}</span>
+            </span>
+        </div>
+    </div>
+    <div class="seccion-5-formulario">
+        <label for="estado_jugador" [ngClass]="{'no-completado': !(opcion_seleccionada === 'Retirado' || opcion_seleccionada === 'En actividad') && envio_erroneo}"> Estado del jugador </label>
+        <span class="opciones-estado-jugador">
+            <input class="input-radio" type="radio" id="opcion_retiro" name="opcion" value="Retirado" (change)="seleccionarOpcionEstadoJugador('Retirado')" #campoOpcionRetiro required> Retirado
+            <input class="input-radio" type="radio" id="opcion_en_actividad" name="opcion" value="En actividad" (change)="seleccionarOpcionEstadoJugador('En actividad')" #campoOpcionEnActividad> En actividad
+        </span>
+        <span [ngClass]="{'oculto': !preguntar_por_retiro}">
+            <label for="retiro" [ngClass]="{'no-completado': (!miFormulario['retiro'].checkValidity() || miFormulario['retiro'].value.trim() === '') && envio_erroneo}"> Año de retiro </label>
+            <input class="input-basico" type="number" id="retiro" name="retiro" min="1980" max="2023" #campoAnioRetiro>
+        </span> 
+        <span [ngClass]="{'oculto': !preguntar_por_entrenador}">
+            <label for="entrenador_actual" [ngClass]="{'no-completado': miFormulario['entrenador_actual'].value.trim() === '' && envio_erroneo}"> Entrenador actual </label>
+            <input class="input-basico" type="text" id="entrenador_actual" name="entrenador_actual" #campoEntrenadorActual>
+        </span>
+    </div>
+    <div class="seccion-6-formulario">
+        <label for="imagen_jugador" [ngClass]="{'no-completado': miFormulario['imagen_jugador'].value.trim() === '' && envio_erroneo}"> Imagen del jugador </label>
+        <input class="input-basico" type="text" name="imagen_jugador" id="imagen_jugador" placeholder="Link a la imagen del jugador" #campoImagenJugador required>
+        <button class="boton-confirmar" type="button" (click)="confirmarOperacion()"> <span *ngIf="tipo_formulario === 'agregar'; else botonEditar"> Agregar jugador </span> </button>
+    </div>
+    <img class="icono-limpiar" (click)="limpiarCampos()" src="https://cdn-icons-png.flaticon.com/512/1214/1214594.png" alt="Icono de limpiar los campos">
+    <app-confirmacion [confirmacion]="tipo_formulario" (confirmado)="operacionConfirmada()"></app-confirmacion>
+    <app-aviso-error [operacion]="tipo_formulario"> </app-aviso-error>
+</form>
+<ng-template #iconoMostrarAnios>
+    <img class="icono-visibilidad" src="https://img2.freepng.es/20180204/cwq/kisspng-symbol-green-leaf-pattern-add-sign-cliparts-5a76f20de2cd66.048249351517744653929.jpg" alt="Icono de mostrar">
+</ng-template>
+<ng-template #iconoNoMostrarAnios>
+    <img class="icono-visibilidad" src="https://media.istockphoto.com/vectors/red-minus-sign-negative-symbol-vector-id692279868?b=1&k=6&m=692279868&s=170667a&w=0&h=2cd2Mnl991JcxbzJWJ4K-XeiKmAYrTHpCGkDBd4gOLU=" alt="Icono de no mostrar">
+</ng-template>
+<ng-template #botonEditar>
+    <span> Modificar jugador </span>
+</ng-template>
+
+<router-outlet> </router-outlet>

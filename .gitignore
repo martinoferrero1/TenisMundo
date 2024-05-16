@@ -1,0 +1,42 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+AngularWeb/dist
+AngularWeb/tmp
+AngularWeb/out-tsc
+AngularWeb/bazel-out
+
+# Node
+AngularWeb/node_modules
+AngularWeb/npm-debug.log
+AngularWeb/yarn-error.log
+
+# IDEs and editors
+AngularWeb/.idea/
+AngularWeb/.project
+AngularWeb/.classpath
+AngularWeb/.c9/
+AngularWeb/*.launch
+AngularWeb/.settings/
+AngularWeb/*.sublime-workspace
+
+# Visual Studio Code
+AngularWeb/.vscode/*
+!AngularWeb/.vscode/settings.json
+!AngularWeb/.vscode/tasks.json
+!AngularWeb/.vscode/launch.json
+!AngularWeb/.vscode/extensions.json
+AngularWeb/.history/*
+
+# Miscellaneous
+AngularWeb/.angular/cache
+AngularWeb/.sass-cache/
+AngularWeb/connect.lock
+AngularWeb/coverage
+AngularWeb/libpeerconnection.log
+AngularWeb/testem.log
+AngularWeb/typings
+
+# System files
+AngularWeb/.DS_Store
+AngularWeb/Thumbs.db

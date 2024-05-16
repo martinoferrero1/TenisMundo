@@ -1,0 +1,17 @@
+
+<app-encabezado-secundario> </app-encabezado-secundario>
+<div class="contorno-general">
+    <app-opciones-navegacion> </app-opciones-navegacion>
+    <div class="agregar-jugadores">
+        <app-pelotas> </app-pelotas>
+        <div class="agregado-jugador">
+            <p class="descripcion-agregado"> Complete la planilla con los datos del jugador que quiere agregar </p>
+            <div>
+                <app-formulario-jugador [tipo_formulario]="'agregar'" (nueva_confirmacion)="agregarJugador()"> </app-formulario-jugador>
+            </div>
+        </div>
+        <app-pelotas> </app-pelotas>
+    </div>
+</div>
+
+<router-outlet> </router-outlet>

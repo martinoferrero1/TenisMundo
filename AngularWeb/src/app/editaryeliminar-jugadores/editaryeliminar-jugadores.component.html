@@ -1,0 +1,71 @@
+
+<app-encabezado-secundario> </app-encabezado-secundario>
+<div class="contorno-general">
+    <app-opciones-navegacion> </app-opciones-navegacion>
+    <div class="editar-eliminar-jugadores">
+        <app-pelotas> </app-pelotas>
+        <app-filtrado-jugadores [jugadores_marcados]="jugadores_marcados" (nuevo_filtro)="obtenerJugadoresNuevoFiltro()"> </app-filtrado-jugadores>
+        <div class="jugadores" *ngIf="jugadores.length > 0; else ningunaCoincidencia">
+            <div class="jugadores-marcados">
+                <span class="seleccionar-completamente">
+                    <span class="cuadrado-marcar" (click)="marcarODesmarcarTodos()">
+                        <span *ngIf="jugadores_marcados === jugadores.length">
+                            <img class="tilde-marcado" src="https://static.vecteezy.com/system/resources/thumbnails/010/153/323/small_2x/tick-icon-sign-symbol-design-free-png.png" alt="Tilde de marcado">
+                        </span>
+                    </span>
+                    <span class="descripcion-seleccionar-todos"> Seleccionar todos ({{jugadores.length}}) </span>
+                </span>
+                <span class="opciones-jugadores-marcados" *ngIf="jugadores_marcados > 0">
+                    <span class="eliminar" (click)="confirmarEliminacion()">
+                        <span class="opcion-general"> Eliminar </span>
+                        <span>
+                            <img class="icono" src="https://static.vecteezy.com/system/resources/previews/017/177/717/non_2x/cross-check-symbol-on-transparent-background-free-png.png" alt="Icono de eliminacion">
+                        </span>
+                    </span>
+                    <span class="cancelar" (click)="desmarcarTodos()">
+                        <span class="opcion-general"> Cancelar </span>
+                        <span>
+                            <img class="icono" src="https://cdn.icon-icons.com/icons2/1077/PNG/512/cancel1_77976.png" alt="Icono de cancelar">
+                        </span>
+                    </span>
+                </span>
+            </div>
+            <app-confirmacion [confirmacion]="'eliminar_varios'" [cantidad_eliminados]="jugadores_marcados" (confirmado)="eliminacionConfirmada()"></app-confirmacion>
+            <div class="resultados-filtrado">
+                <div class="listado">
+                    <div class="jugador" *ngFor="let player of obtenerJugadoresPaginaActual()">
+                        <span class="marcado">
+                            <span class="cuadrado-marcar" (click)="marcarODesmarcar(player._id)">
+                                <span *ngIf="id_jugadores_marcados.includes(player._id)">
+                                    <img class="tilde-marcado" src="https://static.vecteezy.com/system/resources/thumbnails/010/153/323/small_2x/tick-icon-sign-symbol-design-free-png.png" alt="Tilde de marcado">
+                                </span>
+                            </span>
+                            <span class="nombre-jugador">{{ player.nombre }}</span>
+                        </span>
+                        <span class="opciones-especificas">
+                            <span (click)="verDetallesJugador(player._id)"> 
+                                <span class="opcion-especifica"> Ver en detalle </span>
+                                <img class="icono" src="https://cdn.icon-icons.com/icons2/37/PNG/512/viewdetails_vista_3354.png" alt="Icono de ver en detalle">
+                            </span>
+                            <span> / </span>
+                            <span (click)="irAEdicionJugador(player._id)">
+                                <span class="opcion-especifica"> Editar </span>
+                                <img class="icono" src="https://icones.pro/wp-content/uploads/2022/07/icone-crayon-vert.png" alt="Icono de edicion">
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="botones-pasar-pagina">
+                    <button class="boton-pasar-pagina" (click)="paginaAnterior()" [disabled]="pagina_actual === 1">Anterior</button>
+                    <button class="boton-pasar-pagina" (click)="paginaSiguiente()" [disabled]="pagina_actual === paginasTotales()">Siguiente</button>
+                </div>
+            </div>
+        </div>
+        <ng-template #ningunaCoincidencia>
+            <div class="ninguna-coincidencia"> Ningun jugador coincide con los criterios de busqueda </div>
+        </ng-template>
+        <app-pelotas> </app-pelotas>
+    </div>
+</div>
+
+<router-outlet> </router-outlet>

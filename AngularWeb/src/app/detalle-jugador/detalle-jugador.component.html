@@ -1,0 +1,84 @@
+
+<app-encabezado-secundario> </app-encabezado-secundario>
+<div class="contorno-general">
+    <app-opciones-navegacion> </app-opciones-navegacion>
+    <div class="detalle-jugador">
+        <app-pelotas> </app-pelotas>
+        <div class="informacion-completa" *ngIf="jugador">
+            <span class="datos-jugador">
+                <h1 class="nombre"> {{ jugador.nombre }} </h1>
+                <div class="pais-bandera">
+                    <span class="pais"> País: {{ jugador.pais }} </span>
+                    <img class="bandera" src="{{ jugador.bandera_pais }}" alt="Bandera de {{ jugador.pais }}">
+                </div>
+                <p class="fecha-nacimiento"> Fecha de nacimiento: {{ jugador.nacimiento.d }} / {{ jugador.nacimiento.m }} / {{jugador.nacimiento.a}} </p>
+                <div class="titulos-ganados">
+                    <p class="titulos-totales"> Títulos ATP individuales: {{ jugador.titulos_individuales }} </p>
+                    <div class="titulos-gs">
+                        <p class="descripcion-gs"> Títulos de Grand Slam </p>
+                        <div class="australian-open"> 
+                            <span class="descripcion-ao"> Australian Open: </span>
+                            <span *ngIf="jugador.titulos_gs_individuales.ao.length > 0; else noGanado">
+                                <span class="anios-ao" *ngFor="let anio of jugador.titulos_gs_individuales.ao">
+                                    <span> {{ anio }} </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="roland-garros">
+                            <span class="descripcion-rg"> Roland Garros: </span>
+                            <span *ngIf="jugador.titulos_gs_individuales.rg.length > 0; else noGanado">
+                                <span class="anios-rg" *ngFor="let anio of jugador.titulos_gs_individuales.rg">
+                                    <span> {{ anio }} </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="wimbledon">
+                            <span class="descripcion-wi"> Wimbledon: </span>
+                            <span *ngIf="jugador.titulos_gs_individuales.wi.length > 0; else noGanado">
+                                <span class="anios-wi" *ngFor="let anio of jugador.titulos_gs_individuales.wi">
+                                    <span> {{ anio }} </span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="us-open">
+                            <span class="descripcion-uo"> Us Open: </span>
+                            <span *ngIf="jugador.titulos_gs_individuales.uo.length > 0; else noGanado">
+                                <span class="anios-uo" *ngFor="let anio of jugador.titulos_gs_individuales.uo">
+                                    <span> {{ anio }} </span>
+                                </span>
+                            </span>
+                        </div>
+                        <ng-template #noGanado>
+                            <span> - </span>
+                        </ng-template>
+                    </div>
+                </div>
+                <p class="mejor-ranking"> Mejor ránking ATP individual: {{ jugador.mejor_ranking_individual }} </p>
+                <div *ngIf="jugador.retiro; else noRetirado">
+                    <p> Estado del jugador: Retirado </p>
+                    <p> Año de retiro: {{jugador.retiro}} </p>
+                </div>
+                <ng-template #noRetirado>
+                    <p> Estado del jugador: En actividad </p>
+                    <p> Entrenador actual: {{ jugador.entrenador }} </p>
+                </ng-template>
+            </span>
+            <img class="imagen-jugador" src="{{ jugador.imagen_jugador }}" alt="Imagen de {{ jugador.nombre }}">
+        </div>
+        <div class="editar-jugador">
+            <span class="descripcion" (click)="confirmar('editar')"> Editar jugador </span>
+            <span>
+                <img class="icono" src="https://icones.pro/wp-content/uploads/2022/07/icone-crayon-vert.png" alt="Icono de edicion">
+            </span>
+        </div>
+        <div class="eliminar-jugador">
+            <span class="descripcion" (click)="confirmar('eliminar_especifico')"> Eliminar jugador </span>
+            <span>
+                <img class="icono" src="https://static.vecteezy.com/system/resources/previews/017/177/717/non_2x/cross-check-symbol-on-transparent-background-free-png.png" alt="Icono de eliminacion">
+            </span>
+        </div>
+        <app-confirmacion [confirmacion]="'eliminar_especifico'" (confirmado)="operacionConfirmada()"></app-confirmacion>
+        <app-pelotas> </app-pelotas>
+    </div>
+</div>
+<router-outlet></router-outlet>

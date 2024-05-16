@@ -1,0 +1,17 @@
+
+<app-encabezado-secundario> </app-encabezado-secundario>
+<div class="contorno-general">
+    <app-opciones-navegacion> </app-opciones-navegacion>
+    <div class="edicion-jugador">
+        <app-pelotas> </app-pelotas>
+        <div class="editado">
+            <p class="descripcion-editado"> Actualice en la planilla los datos que desee del jugador </p>
+            <div>
+                <app-formulario-jugador [tipo_formulario]="'editar'" [id_jugador_editado]="id_jugador" (nueva_confirmacion)="editarJugador()"> </app-formulario-jugador>
+            </div>
+        </div>
+        <app-pelotas> </app-pelotas>
+    </div>
+</div>
+
+<router-outlet> </router-outlet>

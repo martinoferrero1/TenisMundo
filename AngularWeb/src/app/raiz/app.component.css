@@ -1,0 +1,35 @@
+
+.informacion-adicional {
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    justify-content: space-between;
+    background-color: rgba(12, 1, 1, 0.938);
+    align-items: center;
+    font-size: 0.9vw;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+    border: 5px solid hsla(0, 10%, 4%, 0.795);
+}
+
+.contacto {
+    width: 40vw;
+    margin-left: 1.5vw;
+}
+
+.logo-gmail {
+    width: 1.5vw;
+    height: auto;
+}
+
+.nombre {
+    font-size: 3vw;
+}
+
+.copyright {
+    width: 32vw;
+    margin-right: 1.5vw;
+}
+
+  

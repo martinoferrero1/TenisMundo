@@ -1,0 +1,33 @@
+.encabezado {
+    display: flex;
+    background-color: rgba(12, 1, 1, 0.938);
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    font-size: 3.1vw;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(255, 255, 255);
+    border: 5px solid hsla(0, 10%, 4%, 0.795);
+    border-bottom: none;
+}
+
+.boton-back {
+    width: 4.5vw;
+    height: auto;
+    margin-left: 2vw;
+    cursor: pointer;
+}
+
+.boton-back:hover {
+    border: 2px solid hsl(0, 0%, 100%);
+    border-radius: 45px;
+}
+
+.nombre-pagina {
+    margin-right: 3vw;
+    position: relative;
+    font-style: oblique;
+}
+

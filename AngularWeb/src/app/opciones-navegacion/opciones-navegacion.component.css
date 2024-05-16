@@ -1,0 +1,38 @@
+.opciones-navegacion {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsla(0, 0%, 100%, 0.692);
+    align-items: center;
+    font-size: 1.4vw;
+    font-weight: 800;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(7, 4, 4);
+    border-bottom: 2px solid rgba(74, 188, 150);
+    padding: 7px;
+}
+
+.inicio {
+    margin-left: 7.5%;
+    cursor: pointer;
+}
+
+.agregar-jugadores {
+    cursor: pointer;
+}
+
+.editar-eliminar-jugadores {
+    margin-right: 7.5%;
+    cursor: pointer;
+}
+
+.inicio:hover {
+    color:#041953e3;
+}
+
+.agregar-jugadores:hover {
+    color:#041953e3;
+}
+
+.editar-eliminar-jugadores:hover {
+    color:#041953e3;
+}

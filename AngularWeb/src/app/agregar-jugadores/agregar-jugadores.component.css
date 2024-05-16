@@ -1,0 +1,30 @@
+
+.contorno-general {
+    border: 5px solid hsla(0, 10%, 4%, 0.795);
+}
+
+.agregar-jugadores {
+    background-color: rgba(158, 165, 170, 0.26);
+}
+
+.agregado-jugador {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-align: center;  
+}
+
+.descripcion-agregado {
+    display: inline-block;
+    font-size: 2vw;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 3px solid rgba(74, 188, 150);
+    border-style: groove;
+    border-radius: 30px;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+

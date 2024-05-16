@@ -1,0 +1,83 @@
+
+.inicio {
+    background-size: cover;
+    background-position: center top;
+    border: 5px solid hsla(0, 10%, 4%, 0.795);
+}
+
+.titulo-principal {
+    display: flex;
+    font-size: 5vw;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: hsla(0, 10%, 4%, 0.795);
+    justify-content: center;
+    padding: 10px;
+}
+
+.pelota {
+    width: 3.6vw;
+    height: auto;
+    position: relative;
+    top: 0.4vw;
+    margin-right: 1.2vw;
+}
+
+.seleccionar-jugador {
+    display: inline-block;
+    position: relative;
+    left: 3vw;
+    width: 43.5vw;
+    font-size: 2vw;
+    font-weight: 300;
+    font-family: fantasy;
+    margin-top: 100px;
+    text-align: center;
+    border: 1px solid #0a050567;
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(74, 188, 150);
+}
+
+.jugadores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 20px 135px 20px;
+  }
+  
+.jugador {
+    width: 15vw;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    border: 2px solid #cccccc81;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(128, 128, 128, 0.55);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.jugador:hover {
+    background-color: #b383006e;
+    box-shadow: 10px 15px 8px rgba(0, 0, 0, 0.7);
+  }
+  
+.nombre-jugador {
+    font-size: 1.9vw;
+    font-weight: 900;
+    margin: 10px 0;
+}
+  
+.bandera-pais {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

@@ -1,0 +1,39 @@
+
+<div *ngIf="ventanaVisible()" class="confirmacion-ventana">
+    <div *ngIf="confirmacion==='eliminar_especifico'" class="confirmacion-contenido">
+      <p class="pregunta-confirmacion"> ¿Seguro que deseas eliminar al jugador {{obtenerNombre()}}? </p>
+      <div class="botones">
+        <span class="boton" (click)="confirmar()"> Confirmar e ir a Inicio </span>
+        <span class="boton" (click)="cerrarVentana()"> Cancelar </span>
+      </div>
+    </div>
+    <div *ngIf="confirmacion==='eliminar_varios'" class="confirmacion-contenido">
+      <p class="pregunta-confirmacion"> ¿Seguro que deseas eliminar {{cantidad_eliminados}} jugador<span *ngIf="cantidad_eliminados > 1">es</span>? </p>
+      <div class="botones">
+        <span class="boton" (click)="confirmar()"> Confirmar </span>
+        <span class="boton" (click)="cerrarVentana()"> Cancelar </span>
+      </div>
+    </div>
+    <div *ngIf="confirmacion==='agregar'" class="confirmacion-contenido">
+      <p class="pregunta-confirmacion"> ¿Seguro que deseas agregar al jugador {{obtenerNombre()}}? </p>
+      <div class="botones">
+        <span class="boton" (click)="confirmar()"> Confirmar </span>
+        <span class="boton" (click)="cerrarVentana()"> Cancelar </span>
+      </div>
+    </div>
+    <div *ngIf="confirmacion==='editar'" class="confirmacion-contenido">
+      <p class="pregunta-confirmacion"> ¿Deseas guardar los cambios en el jugador {{obtenerNombre()}}? </p>
+      <div class="botones">
+        <span class="boton" (click)="confirmar()"> Confirmar cambios </span>
+        <span class="boton" (click)="cerrarVentana()"> Cancelar </span>
+      </div>
+    </div>
+    <div *ngIf="confirmacion==='por_defecto'" class="confirmacion-contenido">
+      <div class="botones">
+        <span class="boton" (click)="confirmar()"> Confirmar </span>
+        <span class="boton" (click)="cerrarVentana()"> Cancelar </span>
+      </div>
+    </div>
+  </div>
+  
+  <router-outlet> </router-outlet>

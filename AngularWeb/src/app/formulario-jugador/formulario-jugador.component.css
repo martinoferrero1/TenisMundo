@@ -1,0 +1,148 @@
+
+.formulario-jugador {
+    display: inline-block;
+    text-align: justify;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 8px;
+    border: 3px solid rgba(74, 188, 150);
+    border-style: groove;
+    margin-top: 20px;
+}
+
+.descripcion-titulos-gs {
+    margin-left: 15px;
+    margin-bottom: 15px;
+    font-size: 1.5vw;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.anio-opcion {
+    border: 1px solid rgba(196, 196, 196, 0.836);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.grand-slam {
+    margin-left: 35px;
+    margin-top: 8px;
+}
+
+.oculto {
+    display: none;
+}
+
+.anio-no-seleccionado {
+    background-color: transparent;
+}
+
+.anio-seleccionado {
+    background-color: rgba(0, 128, 0, 0.603);
+}
+
+.anios-elegidos {
+    padding: 2px 5px 2px 5px;
+    border: 3px solid rgba(74, 188, 150);
+    border-radius: 8px;
+    background-color: rgb(255, 253, 253);
+}
+
+.barra {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgba(74, 188, 150);
+    border-radius: 8px;
+    margin-right: 10px;
+    padding: 2px 5px 2px 5px;
+}
+
+.icono-visibilidad {
+    width: 1.1vw;
+    height: auto;
+    border: 2px solid hsla(0, 0%, 5%, 0.486);
+    border-radius: 30px;
+    padding: 2px;
+    margin-left: 2px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.icono-visibilidad:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.input-basico {
+    border: 3px solid rgba(74, 188, 150);
+    border-radius: 8px;
+    margin: 15px 2px 15px 2px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input-basico::placeholder {
+    text-align: center;
+    font-style: oblique;
+    font-size: 12px;
+}
+
+.seccion-4-formulario {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-left: 15px;
+    margin-right: 5px;
+    font-size: 1.2vw;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+.opciones-estado-jugador {
+    font-size: 1.1vw;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    margin-right: 30px;
+}
+
+.input-radio {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.boton-confirmar {
+    background-color: rgb(255, 255, 255);
+    margin-left: 32.8vw;
+    margin-top: 30px;
+    font-size: 1.5vw;
+    font-weight: 900;
+    font-style: oblique;
+    font-family:sans-serif;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.no-completado {
+    color: rgb(224, 12, 12);
+}
+
+.icono-limpiar {
+    width: 2.5vw;
+    height: auto;
+    border: 2px solid hsla(0, 0%, 5%, 0.486);
+    border-radius: 15px;
+    padding: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.icono-limpiar:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

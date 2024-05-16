@@ -1,0 +1,16 @@
+
+<div *ngIf="ventanaVisible()" class="aviso-error-ventana">
+    <div class="aviso-contenido">
+        <div *ngIf="operacion==='agregar'; else editar">
+            <p class="error" > No se pudo agregar al jugador ya que algunos campos no han sido completados o no son válidos </p>
+        </div>
+        <div class="boton-aceptar" (click)="aceptar()"> Aceptar </div>
+    </div>
+    <ng-template #editar>
+        <div *ngIf="operacion==='editar'">
+            <p class="error" > No se pudieron guardar los cambios ya que algunos campos no han sido completados o no son válidos </p>
+        </div>
+    </ng-template>
+  </div>
+  
+  <router-outlet> </router-outlet>

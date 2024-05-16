@@ -1,0 +1,11 @@
+
+.pelota-izquierda {
+    width: 8.2vw;
+    height: auto;
+}
+
+.pelota-derecha {
+    width: 8.2vw;
+    height: auto;
+    float: right;
+}
